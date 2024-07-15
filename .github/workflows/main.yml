@@ -28,25 +28,26 @@ jobs:
         uses: nttld/setup-ndk@v1
         id: setup-ndk
         with:
-          ndk-version: r15c
+          ndk-version: r21e
 
       - name: Setup Java JDK
         uses: actions/setup-java@main
         with:
-          distribution: 'temurin'
-          java-version: 17
+          distribution: 'zulu'
+          java-version: 18
 
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v2
+        uses: android-actions/setup-android@main
 
       - name: Setup Haxe
-        uses: krdlab/setup-haxe@master
+        uses: krdlab/setup-haxe@v1.2.0
         with:
           haxe-version: 4.3.4
 
       - name: Install Haxelib
         run: |
           haxelib setup ~/haxelib
+          haxelib install hxcpp 4.2.1 > /dev/null
           haxelib install lime 7.9.0
           haxelib install openfl 9.1.0
           haxelib --never install flixel 4.11.0
@@ -60,7 +61,6 @@ jobs:
           haxelib install hxCodec 2.6.1
           haxelib git linc_luajit https://github.com/superpowers04/linc_luajit.git
           haxelib git extension-androidtools https://github.com/Edger228/extension-androidtools.git
-          haxelib git hxcpp https://github.com/mcagabe19-stuff/hxcpp.git
           haxelib install hxcpp-debug-server
           haxelib list
       - name: Create Version Tag
@@ -78,6 +78,7 @@ jobs:
           haxelib set flixel 4.11.0
           haxelib set flixel-addons 2.11.0
           haxelib set hxCodec 2.6.1
+          haxelib set hxcpp 4.2.1
         env:
           ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
 
