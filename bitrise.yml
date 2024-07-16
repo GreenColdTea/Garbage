@@ -65,18 +65,10 @@ workflows:
           title: Setup Haxe
           inputs:
             - content: |-
-                #!/bin/bash
-                set -e
-            
-                # Установка HVM
-                git clone https://github.com/HaxeFoundation/haxe.git
-                cd haxe
-                git checkout 4.2.5
-                make
-                sudo make install
-            
-                # Проверка версии Haxe после установки
-                haxe --version
+                sudo apt-get install -y software-properties-common
+                sudo add-apt-repository -y ppa:haxe/releases
+                sudo apt-get update -y
+                sudo apt-get install 1:4.2.5-1~ubuntu18.04.1~ppa1 -y
       - script@1:
           title: Install Haxelib dependencies
           inputs:
