@@ -62,6 +62,8 @@ workflows:
                 sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-10 100
                 echo "export CXX=clang++" >> $BASH_ENV
                 echo "export CC=clang" >> $BASH_ENV
+                echo "export CXXFLAGS='-stdlib=libc++'" >> $BASH_ENV
+                echo "export LDFLAGS='-stdlib=libc++ -lc++abi'" >> $BASH_ENV
                 source $BASH_ENV
       - script@1:
           title: Setup Haxe
