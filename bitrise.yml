@@ -14,7 +14,7 @@ workflows:
           inputs:
             - content: |-
                 echo "Downloading Android NDK..."
-                wget "https://dl.google.com/android/repository/android-ndk-r21e-linux-x86_64.zip" -O android_ndk.zip
+                wget "https://dl.google.com/android/repository/android-ndk-r25c-linux.zip" -O android_ndk.zip
                 if [ $? -ne 0 ]; then
                   echo "Error downloading Android NDK"
                   exit 1
