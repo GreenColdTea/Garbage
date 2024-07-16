@@ -65,11 +65,7 @@ workflows:
           title: Setup Haxe
           inputs:
             - content: |-
-                wget "https://github.com/HaxeFoundation/haxe/releases/download/4.2.5/haxe-4.2.5-linux64.tar.gz"
-                tar -xzf haxe-4.2.5-linux64.tar.gz
-                sudo mv haxe_20220306074705_e5eec31 /usr/local/haxe
-                export PATH=$PATH:/usr/local/haxe
-                source ~/.bashrc
+                lix install haxe 4.2.5
       - script@1:
           title: Install Haxelib dependencies
           inputs:
