@@ -65,7 +65,9 @@ workflows:
           title: Setup Haxe
           inputs:
             - content: |-
-                lix install haxe 4.2.5
+                npm install -g lix
+                lix download haxe 4.2.5
+                lix use haxe 4.2.5
       - script@1:
           title: Install Haxelib dependencies
           inputs:
