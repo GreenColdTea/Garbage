@@ -66,9 +66,8 @@ workflows:
           inputs:
             - content: |-
                 sudo apt-get install -y software-properties-common
-                sudo add-apt-repository -y ppa:haxe/releases
-                sudo apt-get update -y
-                sudo apt-get install 1:4.2.5-1~ubuntu18.04.1~ppa1 -y
+                sudo add-apt-repository -y ppa:haxe/releases/1:4.2.5-1~ubuntu18.04.1~ppa1
+                sudo apt-get install -y
       - script@1:
           title: Install Haxelib dependencies
           inputs:
