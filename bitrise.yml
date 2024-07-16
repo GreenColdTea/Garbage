@@ -65,10 +65,11 @@ workflows:
           title: Setup Haxe
           inputs:
             - content: |-
-                sudo add-apt-repository ppa:haxe/releases
-                sudo apt-get update -y
-                sudo apt-get install haxe=1:4.2.5-1~ubuntu18.04.1~ppa1 -y
-                
+                wget "https://github.com/HaxeFoundation/haxe/releases/download/4.2.5/haxe-4.2.5-linux64.tar.gz"
+                tar -xzf haxe-4.2.5-linux64.tar.gz
+                sudo mv haxe-4.2.5-linux64 /usr/local/haxe
+                export PATH=$PATH:/usr/local/haxe
+                source ~/.bashrc
       - script@1:
           title: Install Haxelib dependencies
           inputs:
