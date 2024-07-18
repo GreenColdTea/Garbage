@@ -116,6 +116,13 @@ workflows:
           inputs:
             - content: |-
                 haxelib run lime build android -D NO_PRECOMPILED_HEADERS --app-version="4.0.0-${BITRISE_BUILD_NUMBER}"
-                echo "export BITRISE_APK_PATH=$(find . -name '*.apk' | head -n 1)" >> $BASH_ENV
+                APK_PATH=$(find . -name '*.apk' | head -n 1)
+                if [ -z "$APK_PATH" ]; then
+                  echo "APK не найден"
+                  exit 1
+                fi
+                echo "export BITRISE_APK_PATH=$APK_PATH" >> $BASH_ENV
                 source $BASH_ENV
-      - deploy-to-bitrise-io: {}
+      - deploy-to-bitrise-io@1:
+          inputs:
+            - deploy_path: "$BITRISE_APK_PATH"
