@@ -57,14 +57,10 @@ workflows:
           inputs:
             - content: |-
                 sudo apt-get install -y clang
+                sudo apt-get install -y clang++-10
                 sudo apt-get install -y libc++-dev libc++abi-dev
-                sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-10 100
                 sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-10 100
-                echo "export CXX=clang++" >> $BASH_ENV
-                echo "export CC=clang" >> $BASH_ENV
-                echo "export CXXFLAGS='-stdlib=libc++'" >> $BASH_ENV
-                echo "export LDFLAGS='-stdlib=libc++ -lc++abi'" >> $BASH_ENV
-                source $BASH_ENV
+                clang++ --version
       - script@1:
           title: Setup Haxe
           inputs:
