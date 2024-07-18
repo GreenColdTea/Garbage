@@ -116,7 +116,11 @@ workflows:
           inputs:
             - content: |-
                 haxelib run lime build android -D NO_PRECOMPILED_HEADERS --app-version="4.0.0-${BITRISE_BUILD_NUMBER}"
-                APK_PATH=$(find . -name '*.apk' | head -n 1)
+      - script@1:
+          title: Installing path to APK
+          inputs:
+            - content: |-
+                APK_PATH=$(find $BITRISE_SOURCE_DIR -name "*.apk" | head -n 1)
                 if [ -z "$APK_PATH" ]; then
                   echo "APK не найден"
                   exit 1
