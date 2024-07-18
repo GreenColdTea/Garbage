@@ -12,6 +12,15 @@ import openfl.display.Sprite;
 import openfl.events.Event;
 import lime.system.System;
 
+#if CRASH_HANDLER
+import openfl.events.UncaughtErrorEvent;
+import haxe.CallStack;
+import haxe.io.Path;
+import sys.FileSystem;
+import sys.io.File;
+import sys.io.Process;
+#end
+
 class Main extends Sprite
 {
 	var gameWidth:Int = 1280; // Width of the game in pixels (might be less / more in actual pixels depending on your zoom).
@@ -82,7 +91,7 @@ class Main extends Sprite
 	{
 		super();
 
-                Generic.initCrashHandler();
+                SUtil.gameCrashCheck();
 
 		if (stage != null)
 		{
@@ -118,37 +127,20 @@ class Main extends Sprite
 			gameHeight = Math.ceil(stageHeight / zoom);
 		}
 		
-		Generic.mode = ROOTDATA;
-		if (!FileSystem.exists(Generic.returnPath() + 'assets')) {
-			FileSystem.createDirectory(Generic.returnPath() + 'assets');
-		}
-		if (!FileSystem.exists(Generic.returnPath() + 'assets/videos')) {
-			FileSystem.createDirectory(Generic.returnPath() + 'assets/videos');
-		}
-		
-		if (!FileSystem.exists(Generic.returnPath() + 'assets/videos/SanicGameOvers')) {
-			FileSystem.createDirectory(Generic.returnPath() + 'assets/videos/SanicGameOvers');
-		}
+		SUtil.doTheCheck();
+	
+		addChild(new FlxGame(game.width, game.height, game.initialState, #if (flixel < "5.0.0") game.zoom, #end game.framerate, game.framerate, game.skipSplash, game.startFullscreen));
 
-    for (video in losvideos) {
-		Generic.copyContent(Paths._video(video), Paths._video(video));
-		}
+		Lib.current.stage.align = "tl";
+		Lib.current.stage.scaleMode = StageScaleMode.NO_SCALE;
 		
-		for (dead in videosdead) {
-		Generic.copyContent(Paths._video('SanicGameOvers' + '/' + dead), Paths._video('SanicGameOvers' + '/' + dead));
-		}
-
 		#if !debug
 		initialState = Intro;
 		#end
 
-		//
 		ClientPrefs.loadDefaultKeys();
 		// FlxGraphic.defaultPersist = true;
 		
-		//
-		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
-
 		fpsVar = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsVar);
 		if(fpsVar != null) {
