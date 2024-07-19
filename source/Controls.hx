@@ -565,15 +565,14 @@ class Controls extends FlxActionSet
 		for (action in this.digitalActions)
 		{
 			var i = action.inputs.length;
-			
 			while (i-- > 0)
 			{
-				var input = action.inputs[i];
-
 				var x = Tinputs.length;
 				while (x-- > 0)
-					if (Tinputs[x] == input)
-						action.remove(input);
+				{
+					if (Tinputs[x] == action.inputs[i])
+						action.remove(action.inputs[i]);
+				}
 			}
 		}
 	}	
