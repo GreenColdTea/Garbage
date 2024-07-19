@@ -44,10 +44,10 @@ class Intro extends MusicBeatState
       var video2 = new VideoHandler();
       video.canSkip = false;
       video2.canSkip = false;
-		video.finishCallback = function()
-		{
+      video.finishCallback = function()
+	{
          video2.playVideo(Paths.video('sonicexe-intro'));
-		}
+	}
       video2.finishCallback = function()
       {
          FlxG.sound.muteKeys = TitleState.muteKeys;
@@ -62,11 +62,11 @@ class Intro extends MusicBeatState
          }
          video2.finishCallback = function()
 		   {
-            PlayState.SONG = Song.loadFromJson('final-escape-hard', 'final-escape');
+                                PlayState.SONG = Song.loadFromJson('final-escape-hard', 'final-escape');
 				PlayState.isStoryMode = true;
 				PlayState.storyDifficulty = 2;
-            PlayState.isFreeplay = false;
-				PlayState.storyWeek = 1;
+                                PlayState.isFreeplay = false;
+				PlayState.storyWeek = 0;
 	   	}
       }
 		video.playVideo(Paths.video('HaxeFlixelIntro'));
