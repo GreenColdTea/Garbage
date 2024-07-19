@@ -2,7 +2,7 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="Restoration Of Sonic.EXE" file="RoSE" packageName="com.merphi.rose" package="com.merphi.rose" main="Main" version="1.0" company="Merphi" />
+	<app title="Restoration of Sonic.EXE" file="RoSE" packageName="com.merphi.rose" package="com.merphi.rose" main="Main" version="1.0" company="Merphi" />
 
 	<!--Switch Export with Unique ApplicationID and Icon-->
 	<set name="APP_ID" value="0x0100f6c013bbc000" />
@@ -82,7 +82,7 @@
 	</section>
 	
 
-<assets path="plugins/"             rename=''               if="VIDEOS_ALLOWED windows" />
+        <assets path="plugins/"             rename=''               if="VIDEOS_ALLOWED windows" />
 	<assets path="dlls/"                rename=''               if="VIDEOS_ALLOWED windows" />
 	<assets path="assets/videos"        library="videos"        if="VIDEOS_ALLOWED"/>
 	<assets path="assets/songs"         library="songs"         exclude="*.ogg" if="web"/>
@@ -95,7 +95,7 @@
 	<assets path='example_mods' rename='mods' embed='false'/>
 	</section>
 	<assets path='art/readme.txt' rename='do NOT readme.txt' />
-   <assets path='art/readme.txt' rename='do NOT readme.txt' />
+        <assets path='art/readme.txt' rename='do NOT readme.txt' />
 	<assets path="art/FatalError.exe" rename='assets/exe/FatalError.exe' if="windows" />
 	<!-- <template path='mods' /> -->
 	
@@ -121,7 +121,7 @@
 	<haxelib name="flixel-ui" />
 	<haxelib name="linc_luajit" if="LUA_ALLOWED"/>
 	<haxelib name="hxCodec" if="VIDEOS_ALLOWED"/> 
-   <haxelib name="extension-androidtools" if="android"/>
+        <haxelib name="extension-androidtools" if="android"/>
 	<haxelib name="faxe" if='switch'/>
 	<!--<haxelib name="polymod"/> -->
 	<haxelib name="discord_rpc" if="desktop"/>
@@ -161,8 +161,8 @@
 	<!--Disable the Flixel core focus lost screen-->
 	<haxedef name="FLX_NO_FOCUS_LOST_SCREEN" />
 
-  <android permission="android.permission.CAPTURE_AUDIO_OUTPUT"/>
-  <android target-sdk-version="26" if="android"/>
+        <android permission="android.permission.CAPTURE_AUDIO_OUTPUT"/>
+        <android target-sdk-version="33" if="android"/>
 	
 	<!-- Show debug traces for hxCodec -->
 	<haxedef name="HXC_DEBUG_TRACE" if="debug" />
@@ -198,9 +198,7 @@
 	<icon path="art/icon16.png" size='16'/>
 	<icon path="art/icon32.png" size='32'/>
 	<icon path="art/icon64.png" size='64'/>
-	<icon path="art/icon128.png" size='128'/>
-	<icon path="art/icon256.png" size='256'/>
-	<icon path="art/icon512.png" size='512'/>
 	<icon path="art/iconOG.png" />
-   <haxedef name='no-deprecation-warnings' />
+		
+        <haxedef name='no-deprecation-warnings' />
 </project>
