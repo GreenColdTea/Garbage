@@ -89,8 +89,7 @@
 	<assets path="assets/songs"         library="songs"         exclude="*.mp3" unless="web"/>
 	<assets path="assets/shared"        library="shared"        exclude="*.ogg" if="web"/>
 	<assets path="assets/shared"        library="shared"        exclude="*.mp3" unless="web"/>
-	<assets path="assets/exe"         library="exe"         exclude="*.mp3" if="web"/>
-	<assets path="assets/exe"         library="exe"         exclude="*.ogg" if="web"/>
+	<assets path="assets/exe"         library="exe"         exclude="*.mp3" unless="web" />
 	
 	<section if="MODS_ALLOWED">
 	<assets path='example_mods' rename='mods' embed='false'/>
