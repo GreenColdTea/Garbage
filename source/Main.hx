@@ -176,7 +176,7 @@ class Main extends Sprite
 		dateNow = dateNow.replace(" ", "_");
 		dateNow = dateNow.replace(":", "'");
 
-		path = "./crash/" + "Merphi_" + dateNow + ".txt";
+		path = "./crash/" + "RoSE_" + dateNow + ".txt";
 
 		for (stackItem in callStack)
 		{
