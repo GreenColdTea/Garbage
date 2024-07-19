@@ -59,11 +59,13 @@ class MusicBeatState extends FlxUIState
 
 	public function removeVirtualPad()
 	{
-		if (trackedInputsVirtualPad.length > 0)
+		if (trackedInputsVirtualPad.length > 0) {
 			controls.removeVirtualControlsInput(trackedInputsVirtualPad);
+		}
 
-		if (virtualPad != null)
+		if (virtualPad != null) {
 			remove(virtualPad);
+		}
 	}
 
 	public function addMobileControls(usesDodge:Bool = false, DefaultDrawTarget:Bool = true)
@@ -103,11 +105,13 @@ class MusicBeatState extends FlxUIState
 
 	public function removeMobileControls()
 	{
-		if (trackedInputsMobileControls.length > 0)
+		if (trackedInputsMobileControls.length > 0) {
 			controls.removeVirtualControlsInput(trackedInputsMobileControls);
+		}
 
-		if (mobileControls != null)
+		if (mobileControls != null) {
 			remove(mobileControls);
+		}
 	}
 
 	public function addVirtualPadCamera() {
@@ -119,8 +123,9 @@ class MusicBeatState extends FlxUIState
 
 	public function addHitbox(?usesDodge = false):Void
 	{
-		if (hitbox != null)
+		if (hitbox != null) {
 			removeHitbox();
+		}
 
 		if (usesDodge) {
 			hitbox = new FlxHitbox(SPACE);
@@ -151,38 +156,46 @@ class MusicBeatState extends FlxUIState
 
 	public function removeHitbox():Void
 	{
-		if (trackedInputsHitbox.length > 0)
+		if (trackedInputsHitbox.length > 0) {
 			controls.removeVirtualControlsInput(trackedInputsHitbox);
+		}
 
-		if (hitbox != null)
+		if (hitbox != null) {
 			remove(hitbox);
+		}
 	}
 	#end
 
 	override function destroy()
 	{
 		#if android
-		if (trackedInputsHitbox.length > 0)
+		if (trackedInputsHitbox.length > 0) {
 			controls.removeVirtualControlsInput(trackedInputsHitbox);
+		}
 
-		if (trackedInputsMobileControls.length > 0)
+		if (trackedInputsMobileControls.length > 0) {
 			controls.removeVirtualControlsInput(trackedInputsMobileControls);
+		}
 
-		if (trackedInputsVirtualPad.length > 0)
+		if (trackedInputsVirtualPad.length > 0) {
 			controls.removeVirtualControlsInput(trackedInputsVirtualPad);
+		}
 		#end
 
 		super.destroy();
 
 		#if android
-		if (virtualPad != null)
+		if (virtualPad != null) {
 			virtualPad = FlxDestroyUtil.destroy(virtualPad);
+		}
 
-		if (mobileControls != null)
+		if (mobileControls != null) {
 			mobileControls = FlxDestroyUtil.destroy(mobileControls);
+		}
 
-		if (hitbox != null)
+		if (hitbox != null) {
 			hitbox = FlxDestroyUtil.destroy(hitbox);
+			}
 		#end
 	}
 
