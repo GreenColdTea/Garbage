@@ -84,7 +84,7 @@ workflows:
                 haxelib install tjson
                 haxelib install hxjsonast
                 haxelib install hscript
-                haxelib git hxCodec https://github.com/MobilePorting/hxCodec-0.6.3.git
+                haxelib install hxCodec 2.6.1
                 haxelib git hxcpp https://github.com/mcagabe19-stuff/hxcpp.git
                 haxelib git linc_luajit https://github.com/superpowers04/linc_luajit.git
                 haxelib git extension-androidtools https://github.com/Edger228/oldtools.git
@@ -108,6 +108,7 @@ workflows:
                 haxelib set openfl 9.1.0
                 haxelib set flixel 4.11.0
                 haxelib set flixel-addons 2.11.0
+                haxelib set hxCodec 2.6.1
           env:
             ANDROID_NDK_HOME: $HOME/android-ndk/android-ndk-r25c
       - script@1:
