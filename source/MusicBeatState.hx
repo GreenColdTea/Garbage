@@ -19,6 +19,8 @@ import flixel.system.scaleModes.RatioScaleMode;
 import flixel.input.actions.FlxActionInput;
 import android.AndroidControls.AndroidControls;
 import android.FlxVirtualPad;
+import flixel.FlxCamera;
+import flixel.util.FlxDestroyUtil;
 #end
 
 class MusicBeatState extends FlxUIState
