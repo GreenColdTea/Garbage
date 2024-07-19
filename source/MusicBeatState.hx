@@ -15,6 +15,7 @@ import flixel.FlxState;
 import flixel.FlxBasic;
 import openfl.Lib;
 import flixel.system.scaleModes.RatioScaleMode;
+
 #if android
 import flixel.input.actions.FlxActionInput;
 import android.AndroidControls.AndroidControls;
@@ -156,6 +157,7 @@ class MusicBeatState extends FlxUIState
 
 	public function removeHitbox():Void
 	{
+	  #if android
 		if (trackedInputsHitbox.length > 0) {
 			controls.removeVirtualControlsInput(trackedInputsHitbox);
 		}
@@ -163,8 +165,9 @@ class MusicBeatState extends FlxUIState
 		if (hitbox != null) {
 			remove(hitbox);
 		}
+		#end
 	}
-	#end
+
 
 	override function destroy()
 	{
@@ -256,7 +259,7 @@ class MusicBeatState extends FlxUIState
 		curStep = lastChange.stepTime + Math.floor(shit);
 	}
 
-        public static function switchState(nextState:FlxState) {
+   public static function switchState(nextState:FlxState) {
 		// Custom made Trans in
 		var curState:Dynamic = FlxG.state;
 		var leState:MusicBeatState = curState;
