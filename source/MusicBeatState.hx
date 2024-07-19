@@ -61,7 +61,7 @@ class MusicBeatState extends FlxUIState
 		if (trackedinputsUI != [])
 			controls.removeFlxInput(trackedinputsUI);
 
-	  if (virtualPad != null)
+	  if (_virtualPad != null)
 			remove(_virtualPad);
 	}
 	#end
@@ -73,7 +73,7 @@ class MusicBeatState extends FlxUIState
 			controls.removeFlxInput(trackedinputsNOTES);
 
 		if (androidControls != null)
-			remove(androidControls);
+			remove(androidc);
 	}
 	#end
 
@@ -135,15 +135,15 @@ class MusicBeatState extends FlxUIState
 				super.destroy();
 		
 		#if android
-				if (virtualPad != null)
+				if (_virtualPad != null)
 				{
-					virtualPad = FlxDestroyUtil.destroy(virtualPad);
-					virtualPad = null;
+					_virtualPad = FlxDestroyUtil.destroy(_virtualPad);
+					_virtualPad = null;
 				}
 		
-				if (androidControls != null)
+				if (androidc != null)
 				{
-					androidControls = FlxDestroyUtil.destroy(androidControls);
+					androidc = FlxDestroyUtil.destroy(androidc);
 					androidControls = null;
 				}
 		#end
