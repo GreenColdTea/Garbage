@@ -561,7 +561,8 @@ class Controls extends FlxActionSet
 	}
 	
 
-	public function removeFlxInput(Tinputs:Array<FlxActionInput>) {
+	public function removeFlxInput(Tinputs:Array<FlxActionInput>):Void 
+	{
 		for (action in this.digitalActions)
 		{
 			var i = action.inputs.length;
