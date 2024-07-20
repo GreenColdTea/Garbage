@@ -81,8 +81,9 @@ import hxcodec.VideoHandler as MP4Handler;
 import VideoHandler as MP4Handler;
 #else
 import vlc.MP4Handler;
+import vlc.MP4Sprite;
 #end
-import hxcodec.VideoSprite;
+import hxcodec.MP4Handler;
 #end
 
 using StringTools;
