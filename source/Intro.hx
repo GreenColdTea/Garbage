@@ -39,10 +39,7 @@ class Intro extends MusicBeatState
     {
       FlxG.sound.muteKeys = [];
       FlxG.sound.volumeDownKeys = [];
-      FlxG.sound.volumeUpKeys = [];
-	    
-      var pressedEnter:Bool = FlxG.keys.justPressed.ENTER;
-	    
+      FlxG.sound.volumeUpKeys = [];	    
       var video = new VideoHandler();
       var video2 = new VideoHandler();
       video.canSkip = false;
@@ -59,6 +56,7 @@ class Intro extends MusicBeatState
          MusicBeatState.switchState(new TitleState());
       }
       if (FlxG.save.data.storyProgress == 3) {
+	 video2.canSkip = false;
          video.finishCallback = function()
          {
             video2.playVideo(Paths.video('sonicexe-intro-fe'));
