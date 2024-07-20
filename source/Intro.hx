@@ -84,7 +84,7 @@ class Intro extends MusicBeatState
 	    PlayState.isStoryMode = true;
 	    PlayState.storyDifficulty = 2;
             PlayState.isFreeplay = false;
-	    PlayState.storyWeek = 0;
+	    PlayState.storyWeek = 1;
 	 }
          #else
 	 PlayState.SONG = Song.loadFromJson('final-escape-hard', 'final-escape');
