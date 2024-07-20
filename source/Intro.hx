@@ -60,18 +60,18 @@ class Intro extends MusicBeatState
       }
       if (FlxG.save.data.storyProgress == 3) {
          video.finishCallback = function()
-		   {
+         {
             video2.playVideo(Paths.video('sonicexe-intro-fe'));
          }
          video2.finishCallback = function()
-		   {
+	 {
                                 PlayState.SONG = Song.loadFromJson('final-escape-hard', 'final-escape');
 				PlayState.isStoryMode = true;
 				PlayState.storyDifficulty = 2;
                                 PlayState.isFreeplay = false;
 				PlayState.storyWeek = 0;
-	   	}
-      }
-		video.playVideo(Paths.video('HaxeFlixelIntro'));
+	 }
+       }
+	    video.playVideo(Paths.video('HaxeFlixelIntro'));
     }
 }
