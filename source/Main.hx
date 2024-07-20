@@ -13,6 +13,7 @@ import openfl.events.Event;
 import openfl.display.StageScaleMode;
 import lime.system.System;
 import lime.app.Application;
+import flixel.util.FlxSave;
 
 #if desktop
 import Discord.DiscordClient;
