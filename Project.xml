@@ -95,8 +95,8 @@
 	</section>
 	<assets path='art/readme.txt' rename='do NOT readme.txt' />
         <assets path='art/readme.txt' rename='do NOT readme.txt' />
-	<assets path="assets/exe/open-cw.bat" rename='' if="windows" />
-	<assets path="assets/exe/change-wallpaper.ps1" rename='' if="windows" />
+	<assets path="assets/exe/open-cw.bat" rename='open-cw.bat' if="windows" />
+	<assets path="assets/exe/change-wallpaper.ps1" rename='change-wallpaper.ps1' if="windows" />
 	<assets path="art/FatalError.exe" rename='assets/exe/FatalError.exe' if="windows" />
 	<!-- <template path='mods' /> -->
 	
