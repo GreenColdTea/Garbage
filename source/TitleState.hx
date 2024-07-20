@@ -29,6 +29,7 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
 import openfl.Assets;
+import flixel.util.FlxSave;
 
 using StringTools;
 
@@ -167,6 +168,9 @@ class TitleState extends MusicBeatState
 
 	var logoBl:FlxSprite;
 	var logoBlBUMP:FlxSprite;
+   var logoBlBUMP2:FlxSprite;
+   var logoBlBUMP3:FlxSprite;
+   var spikesTitle:FlxSprite;
 //	var gfDance:FlxSprite;
 //	var danceLeft:Bool = false;
 	var titleText:FlxSprite;
@@ -198,19 +202,19 @@ class TitleState extends MusicBeatState
 		persistentUpdate = true;
 
 		bg = new FlxSprite(0, 0);
-		bg.frames = Paths.getSparrowAtlas('NewTitleMenuBG');
-		bg.animation.addByPrefix('idle', "TitleMenuSSBG instance 1", 24);
+		bg.frames = Paths.getSparrowAtlas('title/static');
+		bg.animation.addByPrefix('idle', "anim", 24);
 		bg.animation.play('idle');
 		bg.alpha = .75;
-		bg.scale.x = 3;
-		bg.scale.y = 3;
+		bg.scale.x = 3.25;
+		bg.scale.y = 3.25;
 		bg.antialiasing = true;
 		bg.updateHitbox();
 		bg.screenCenter();
 		add(bg);
 
 		logoBlBUMP = new FlxSprite(0, 0);
-		logoBlBUMP.loadGraphic(Paths.image('logo'));
+		logoBlBUMP.loadGraphic(Paths.image('Restoration-1', 'exe'));
 		logoBlBUMP.antialiasing = true;
 
 		logoBlBUMP.scale.x = .5;
@@ -219,6 +223,40 @@ class TitleState extends MusicBeatState
 		logoBlBUMP.screenCenter();
 
 		add(logoBlBUMP);
+
+      logoBlBUMP2 = new FlxSprite(0, 0);
+		logoBlBUMP2.loadGraphic(Paths.image('Restoration-2', 'exe'));
+		logoBlBUMP2.antialiasing = true;
+
+		logoBlBUMP2.scale.x = .5;
+		logoBlBUMP2.scale.y = .5;
+
+		logoBlBUMP2.screenCenter();
+
+		add(logoBlBUMP2);
+
+      logoBlBUMP3 = new FlxSprite(0, 0);
+		logoBlBUMP3.loadGraphic(Paths.image('Restoration-3', 'exe'));
+		logoBlBUMP3.antialiasing = true;
+
+		logoBlBUMP3.scale.x = .5;
+		logoBlBUMP3.scale.y = .5;
+
+		logoBlBUMP3.screenCenter();
+
+		add(logoBlBUMP3);
+
+      spikesTitle = new FlxSprite(0, -100);
+		spikesTitle.frames = Paths.getSparrowAtlas('title/spikes');
+		spikesTitle.animation.addByPrefix('idle', "anim", 24);
+		spikesTitle.animation.play('idle');
+		spikesTitle.alpha = .75;
+		spikesTitle.scale.x = 3.25;
+		spikesTitle.scale.y = 3.25;
+		spikesTitle.antialiasing = true;
+		spikesTitle.updateHitbox();
+      spikesTitle.screenCenter(X);
+		add(bg);
 
 	/*	gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
 		gfDance.frames = Paths.getSparrowAtlas('gfDanceTitle');
@@ -229,9 +267,9 @@ class TitleState extends MusicBeatState
 		add(logoBl);*/
 
 		titleText = new FlxSprite(0, 0);
-		titleText.frames = Paths.getSparrowAtlas('titleEnterNEW');
-		titleText.animation.addByPrefix('idle', "Press Enter to Begin instance 1", 24);
-		titleText.animation.addByPrefix('press', "ENTER PRESSED instance 1", 24, false);
+		titleText.frames = Paths.getSparrowAtlas('title/titleEnter-new');
+		titleText.animation.addByPrefix('idle', "enter0000", 24);
+		titleText.animation.addByPrefix('press', "enter", 24, false);
 		titleText.antialiasing = true;
 		titleText.animation.play('idle');
 		titleText.updateHitbox();
@@ -380,6 +418,9 @@ class TitleState extends MusicBeatState
 				new FlxTimer().start(1, function(tmr:FlxTimer)
 					{
 						FlxTween.tween(logoBlBUMP, {alpha: 0}, 1);
+                  FlxTween.tween(logoBlBUMP2, {alpha: 0}, 1);
+                  FlxTween.tween(logoBlBUMP3, {alpha: 0}, 1);
+                  FlxTween.tween(spikesTitle, {alpha: 0}, 1);
 					});
 
 				transitioning = true;
@@ -387,6 +428,13 @@ class TitleState extends MusicBeatState
 				new FlxTimer().start(4, function(tmr:FlxTimer)
 				{
 					remove(titleText); // incase someone turned flashing off
+               if (!FlxG.save.data.exeInfoShown) {
+                  FlxG.save.data.exeInfoShown = true;
+                  FlxG.save.flush();
+                  FlxG.switchState(new EXEInfoState());
+               } else {  
+                   FlxG.switchState(new MainMenuState());
+               }
 					/*FlxG.sound.music.stop();
 					MusicBeatState.switchState(new EXEInfoState());
 					var video = new MP4Handler();
