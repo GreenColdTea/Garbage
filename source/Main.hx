@@ -49,7 +49,7 @@ class Main extends Sprite
 		"glasses",
 		"guns",
 		"HaxeFlixelIntro",
-      "sonicexe-intro",
+                "sonicexe-intro",
 		"hitmarkers",
 		"illuminati",
 		"IlluminatiConfirmed",
@@ -58,19 +58,19 @@ class Main extends Sprite
 		"noscope",
 		"sonic1",
 		"sound-test-codes",
-      "the-gaze-of-a-god_NoAudio",
-      "soulless-intro",
+                "the-gaze-of-a-god_NoAudio",
+                "soulless-intro",
 		"tooslowcutscene1",
 		"tooslowcutscene2",
 		"weed",
 		"youcantruncutscene2",
-      "ycr-encore-intro",
-      "ugly-intro",
-      "tt-final",
-      "sonic-exe-intro-fe",
-      "i-am-god-NoAudio",
-      "fof-intro",
-      "critical-error-intro"
+                "ycr-encore-intro",
+                "ugly-intro",
+                "tt-final",
+                "sonic-exe-intro-fe",
+                "i-am-god-NoAudio",
+                "fof-intro",
+                "critical-error-intro"
 	]; //better way to do this?
 	
 	static final videosdead:Array<String> = [
