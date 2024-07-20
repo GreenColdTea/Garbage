@@ -67,12 +67,12 @@ class EXEInfoState extends MusicBeatState
 	
 	override function update(elapsed:Float)
 	{
-		super.update(elapsed);
+	    super.update(elapsed);
 
-		if(controls.ACCEPT)
-         FlxTween.tween(sonicWarn, {alpha: 0}, 2.5);
-         FlxTween.tween(discl, {alpha: 0}, 2.5);
-         Confirm.play();
-         new FlxTimer().start(2.5, timerComplete);
+            if(controls.ACCEPT)
+                FlxTween.tween(sonicWarn, {alpha: 0}, 2.5);
+                FlxTween.tween(discl, {alpha: 0}, 2.5);
+                Confirm.play();
+                new FlxTimer().start(2.5, timerComplete);
 	}
 }
