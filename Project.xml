@@ -2,7 +2,7 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="Restoration Of Sonic.EXE" file="RoSE" packageName="com.merphi.rose" package="com.merphi.rose" main="Main" version="1.0" company="Merphi" />
+	<app title="Restoration of Sonic.EXE" file="RoSE" packageName="com.merphi.rose" package="com.merphi.rose" main="Main" version="1.0" company="Merphi" />
 
 	<!--Switch Export with Unique ApplicationID and Icon-->
 	<set name="APP_ID" value="0x0100f6c013bbc000" />
