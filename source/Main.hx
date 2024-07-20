@@ -83,13 +83,13 @@ class Main extends Sprite
 		"Kys"
 	]; //someone kill me
 
-   static final seriousdead:Array<String> = [
-      "1",
-      "2",
-      "3",
-      "4",
-      "Secret"
-   ];
+        static final seriousdead:Array<String> = [
+                 "1",
+                 "2",
+                 "3",
+                 "4",
+                 "Secret"
+        ]; //serious death OuOuouououoo
 
 	public static function main():Void {
 		Lib.current.addChild(new Main());
