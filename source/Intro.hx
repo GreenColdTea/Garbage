@@ -37,10 +37,8 @@ import hxcodec.flixel.FlxVideo as MP4Handler;
 import hxcodec.VideoHandler as MP4Handler;
 #elseif (hxCodec == "2.6.0")
 import VideoHandler as MP4Handler;
-#else
-import vlc.MP4Handler;
 #end
-import hxcodec.MP4Handler;
+import vlc.MP4Handler;
 #end
 
 using StringTools;
