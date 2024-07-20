@@ -32,12 +32,12 @@ import openfl.Assets;
 
 #if VIDEOS_ALLOWED
 #if (hxCodec >= "3.0.0")
-import hxcodec.flixel.FlxVideo as MP4Handler;
+import hxcodec.flixel.FlxVideo
 #elseif (hxCodec == "2.6.1")
-import hxcodec.VideoHandler as MP4Handler;
+import hxcodec.VideoHandler
 #elseif (hxCodec == "2.6.0")
-import VideoHandler as MP4Handler;
-#end
+import VideoHandler
+#else
 import vlc.MP4Handler;
 #end
 
