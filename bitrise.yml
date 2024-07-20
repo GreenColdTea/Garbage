@@ -53,15 +53,6 @@ workflows:
                 echo "export PATH=$PATH:$HOME/android-sdk/platform-tools" >> $BASH_ENV
                 source $BASH_ENV
       - script@1:
-          title: Setup Clang++
-          inputs:
-            - content: |-
-                sudo apt-get install -y clang
-                sudo apt-get install -y clang++-10
-                sudo apt-get install -y libc++-dev libc++abi-dev
-                sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-10 100
-                clang++ --version
-      - script@1:
           title: Setup Haxe
           inputs:
             - content: |-
