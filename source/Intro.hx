@@ -29,7 +29,7 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
 import openfl.Assets;
-import hxcodec.VideoHandler;
+import vlc.MP4Handler;
 
 using StringTools;
 
