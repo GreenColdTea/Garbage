@@ -38,7 +38,7 @@ class Intro extends MusicBeatState
     override public function create()
     {
       FlxG.sound.muteKeys = [];
-  	 FlxG.sound.volumeDownKeys = [];
+      FlxG.sound.volumeDownKeys = [];
       FlxG.sound.volumeUpKeys = [];
       var video = new VideoHandler();
       var video2 = new VideoHandler();
