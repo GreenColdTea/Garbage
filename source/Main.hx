@@ -10,14 +10,10 @@ import openfl.Lib;
 import openfl.display.FPS;
 import openfl.display.Sprite;
 import openfl.events.Event;
-import openfl.display.StageScaleMode;
 import lime.system.System;
+import openfl.display.StageScaleMode;
 import lime.app.Application;
 import flixel.util.FlxSave;
-
-#if desktop
-import Discord.DiscordClient;
-#end
 
 #if CRASH_HANDLER
 import openfl.events.UncaughtErrorEvent;
@@ -34,7 +30,7 @@ class Main extends Sprite
 {
 	var gameWidth:Int = 1280; // Width of the game in pixels (might be less / more in actual pixels depending on your zoom).
 	var gameHeight:Int = 720; // Height of the game in pixels (might be less / more in actual pixels depending on your zoom).
-	public static var initialState:Class<FlxState> = TitleState; // The FlxState the game starts with.
+	public static var initialState:Class<FlxState> = Intro; // The FlxState the game starts with.
 	var zoom:Float = -1; // If -1, zoom is automatically calculated to fit the window dimensions.
 	var framerate:Int = 60; // How many frames per second the game should run at.
 	var skipSplash:Bool = true; // Whether to skip the flixel splash screen that appears in release mode.
@@ -50,7 +46,7 @@ class Main extends Sprite
 		"glasses",
 		"guns",
 		"HaxeFlixelIntro",
-                "sonicexe-intro",
+      "sonicexe-intro",
 		"hitmarkers",
 		"illuminati",
 		"IlluminatiConfirmed",
@@ -59,19 +55,19 @@ class Main extends Sprite
 		"noscope",
 		"sonic1",
 		"sound-test-codes",
-                "the-gaze-of-a-god_NoAudio",
-                "soulless-intro",
+      "the-gaze-of-a-god_NoAudio",
+      "soulless-intro",
 		"tooslowcutscene1",
 		"tooslowcutscene2",
 		"weed",
 		"youcantruncutscene2",
-                "ycr-encore-intro",
-                "ugly-intro",
-                "tt-final",
-                "sonic-exe-intro-fe",
-                "i-am-god-NoAudio",
-                "fof-intro",
-                "critical-error-intro"
+      "ycr-encore-intro",
+      "ugly-intro",
+      "tt-final",
+      "sonic-exe-intro-fe",
+      "i-am-god-NoAudio",
+      "fof-intro",
+      "critical-error-intro"
 	]; //better way to do this?
 	
 	static final videosdead:Array<String> = [
@@ -84,13 +80,13 @@ class Main extends Sprite
 		"Kys"
 	]; //someone kill me
 
-        static final seriousdead:Array<String> = [
-                 "1",
-                 "2",
-                 "3",
-                 "4",
-                 "Secret"
-        ]; //serious death OuOuouououoo
+   static final seriousdead:Array<String> = [
+      "1",
+      "2",
+      "3",
+      "4",
+      "Secret"
+   ];
 
 	public static function main():Void {
 		Lib.current.addChild(new Main());
@@ -98,15 +94,14 @@ class Main extends Sprite
 
 	public function new()
 	{
-           FlxG.save.bind("MyGameSave");
+        FlxG.save.bind("MyGameSave");
            if (FlxG.save.data.exeInfoShown == null) {
                FlxG.save.data.exeInfoShown = false;
                FlxG.save.flush();
 	   } 
-		
 		super();
 
-                SUtil.gameCrashCheck();
+      SUtil.gameCrashCheck();
 
 		if (stage != null)
 		{
@@ -143,23 +138,25 @@ class Main extends Sprite
 		}
 		
 		SUtil.doTheCheck();
-	
-		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
 
-		Lib.current.stage.align = "tl";
+      Lib.current.stage.align = "tl";
 		Lib.current.stage.scaleMode = StageScaleMode.NO_SCALE;
 
-	        #if CRASH_HANDLER
+	   #if CRASH_HANDLER
 		Lib.current.loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, onCrash);
 		#end
-		
+
 		#if !debug
 		initialState = Intro;
 		#end
 
+		//
 		ClientPrefs.loadDefaultKeys();
 		// FlxGraphic.defaultPersist = true;
 		
+		//
+		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
+
 		fpsVar = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsVar);
 		if(fpsVar != null) {
@@ -172,7 +169,7 @@ class Main extends Sprite
 		#end
 	}
 
-	#if CRASH_HANDLER
+   #if CRASH_HANDLER
 	function onCrash(e:UncaughtErrorEvent):Void
 	{
 		var errMsg:String = "";
@@ -180,10 +177,10 @@ class Main extends Sprite
 		var callStack:Array<StackItem> = CallStack.exceptionStack(true);
 		var dateNow:String = Date.now().toString();
 
-		dateNow = dateNow.replace(" ", "_");
-		dateNow = dateNow.replace(":", "'");
+		dateNow = dateNow.replace(dateNow, " ", "_");
+                dateNow = dateNow.replace(dateNow, ":", "'");
 
-		path = "./crash/" + "RoSE_" + dateNow + ".txt";
+		path = "./crash/" + "Merphi_" + dateNow + ".txt";
 
 		for (stackItem in callStack)
 		{
@@ -207,7 +204,7 @@ class Main extends Sprite
 		Sys.println("Crash dump saved in " + Path.normalize(path));
 
 		Application.current.window.alert(errMsg, "Error!");
-         #if desktop
+    #if desktop
 		DiscordClient.shutdown();
 	 #end
 		Sys.exit(1);
