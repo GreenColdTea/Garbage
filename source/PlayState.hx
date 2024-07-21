@@ -4368,7 +4368,6 @@ public function moveCamera(isDad:Bool)
 			transitioning = true;
 		}
 	}
-		}
 
 	#if ACHIEVEMENTS_ALLOWED
 	var achievementObj:AchievementObject = null;
