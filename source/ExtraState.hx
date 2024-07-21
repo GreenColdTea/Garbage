@@ -11,7 +11,7 @@ import WeekData;
 
 using StringTools;
 
-class ExtraState extends MusicMenuState {
+class ExtraState extends MusicBeatState {
   //Complete the story mode bitch!!
   var goufuckoffbitch:FlxSprite;
   public var getout:Bool = true;
