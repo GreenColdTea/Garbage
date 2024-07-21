@@ -78,13 +78,14 @@ import hxcodec.flixel.FlxVideo as MP4Handler;
 import hxcodec.flixel.FlxVideoSprite as MP4Sprite;
 #elseif (hxCodec == "2.6.1")
 import hxcodec.VideoHandler as MP4Handler;
-import hxcodec.VideoSprite as MP4Sprite
+import hxcodec.VideoSprite as MP4Sprite;
 #elseif (hxCodec == "2.6.0")
 import VideoHandler as MP4Handler;
-import VideoSprite as MP4Sprite
+import VideoSprite as MP4Sprite;
 #else
 import vlc.MP4Handler;
 import vlc.MP4Sprite;
+#end
 #end
 
 using StringTools;
