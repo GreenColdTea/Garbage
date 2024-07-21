@@ -29,7 +29,7 @@ class EncoreState extends MusicBeatState // REWRITE FREEPLAY!?!?!? HELL YEA!!!!!
 
 	var curSelected:Int = 0;
 
-	var songArray:Array<String> = ["too-slow-encore", "you-cant-run-encore", "triple-trouble-encore", 'endless-encore', '];
+	var songArray:Array<String> = ["too slow encore", "you cant run encore", "triple trouble encore", 'endless encore', 'cycles encore', 'sunshine encore', 'chaos encore', 'round a bout encore', 'her world encore', 'color blind encore'];
 
 	var boxgrp:FlxTypedSpriteGroup<FlxSprite>;
 
@@ -49,7 +49,6 @@ class EncoreState extends MusicBeatState // REWRITE FREEPLAY!?!?!? HELL YEA!!!!!
 
 	override function create()
 	{
-		
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
 
@@ -156,12 +155,26 @@ class EncoreState extends MusicBeatState // REWRITE FREEPLAY!?!?!? HELL YEA!!!!!
 
 			switch (songArray[curSelected]) // Some charts don't include -hard in their file name so i decided to get focken lazy.
 			{
-          case "too-slow-encore":
+          case "too slow encore":
 					PlayState.SONG = Song.loadFromJson('too-slow-encore', 'too-slow-encore');
-          case "you-cant-run-encore":
+          case "you cant run encore":
 					PlayState.SONG = Song.loadFromJson('you-cant-run-encore', 'you-cant-run-encore');
-          case "triple-trouble-encore":
+          case "triple trouble encore":
 					PlayState.SONG = Song.loadFromJson('triple-trouble-encore', 'triple-trouble-encore');
+	  case "endless encore":
+					PlayState.SONG = Song.loadFromJson('endless-encore', 'endless-encore');
+	  case "cycles encore":
+					PlayState.SONG = Song.loadFromJson('cycles-encore', 'cycles-encore');
+	  case "sunshine encore":
+					PlayState.SONG = Song.loadFromJson('sunshine-encore', 'sunshine-encore');
+	  case "chaos encore":
+					PlayState.SONG = Song.loadFromJson('chaos-encore', 'chaos-encore');
+	  case "round a bout encore":
+					PlayState.SONG = Song.loadFromJson('round-a-bout-encore', 'round-a-bout-encore');
+	  case "her world encore":
+					PlayState.SONG = Song.loadFromJson('her-world-encore', 'her-world-encore');
+	  case "color blind encore":
+					PlayState.SONG = Song.loadFromJson('color-blind-encore', 'color-blind-encore');
 				default:
 					PlayState.SONG = Song.loadFromJson(songArray[curSelected].toLowerCase(), songArray[curSelected].toLowerCase());
 			}
