@@ -40,6 +40,7 @@ import VideoHandler;
 #else
 import vlc.MP4Handler;
 #end
+#end
 
 using StringTools;
 
