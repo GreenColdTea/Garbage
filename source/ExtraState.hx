@@ -6,6 +6,7 @@ import flixel.FlxSprite;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.util.FlxTimer;
 import flixel.tweens.FlxTween;
+import flixel.system.FlxSound;
 import WeekData;
 
 using StringTools;
@@ -122,23 +123,22 @@ class ExtraState extends MusicMenuState {
   override public function create()
   {
     Paths.clearStoredMemory();
-		Paths.clearUnusedMemory();
+    Paths.clearUnusedMemory();
 		
-		getout = false;
+    getout = false;
 		
-		FlxG.sound.playMusic(Paths.music('extras'));
+    FlxG.sound.playMusic(Paths.music('extras'));
 
     if (getout) {
       #if android
         addVirtualPad(NONE, B);
       #end
-      
       goufuckoffbitch = new FlxSprite(0, 0);
-	  	goufuckoffbitch.loadGraphic(Paths.image('extra/code/Story'));
-	  	goufuckoffbitch.antialiasing = true;
-	  	goufuckoffbitch.screenCenter();
-	  	goufuckoffbitch.updateHitbox();
-	  	add(goufuckoffbitch);
+      goufuckoffbitch.loadGraphic(Paths.image('extra/code/Story'));
+      goufuckoffbitch.antialiasing = true;
+      goufuckoffbitch.screenCenter();
+      goufuckoffbitch.updateHitbox();
+      add(goufuckoffbitch);
     }
     
     if (!getout) {
@@ -147,12 +147,12 @@ class ExtraState extends MusicMenuState {
       #end
       extraMenu = new FlxSprite(0, 0);
       extraMenu.loadGraphic(Paths.image('extra/extras/ExtrasWG'));
-	  	extraMenu.antialiasing = true;
-	  	extraMenu.screenCenter();
-	  	extraMenu.updateHitbox();
-	  	extraMenu.scale.x = 1.5;
-	  	extraMenu.scale.y = 1.5;
-	  	add(extraMenu);
+      extraMenu.antialiasing = true;
+      extraMenu.screenCenter();
+      extraMenu.updateHitbox();
+      extraMenu.scale.x = 1.5;
+      extraMenu.scale.y = 1.5;
+      add(extraMenu);
     }
   }
   override public function destroy() {
