@@ -115,15 +115,15 @@ class Main extends Sprite
 		}
 		else
 		{
-			addEventListener(Event.ADDED_TO_STAGE, init);
+			addEventListener(Event.RESIZE, init);
 		}
 	}
 
 	private function init(?E:Event):Void
 	{
-		if (hasEventListener(Event.ADDED_TO_STAGE))
+		if (hasEventListener(Event.RESIZE))
 		{
-			removeEventListener(Event.ADDED_TO_STAGE, init);
+			removeEventListener(Event.RESIZE, init);
 		}
 
 		setupGame();
