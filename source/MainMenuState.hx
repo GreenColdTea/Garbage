@@ -38,7 +38,7 @@ class MainMenuState extends MusicBeatState
 		'story_mode',
 		'encore',
 		'freeplay',
-    'credits',
+                'credits',
 		'sound_test',
 		'options',
 		'extras'
@@ -48,16 +48,16 @@ class MainMenuState extends MusicBeatState
 	var newGaming2:FlxText;
 	public static var firstStart:Bool = true;
 
-  public var selectedSomethin:Bool = false;
+        public var selectedSomethin:Bool = false;
 
 	public static var nightly:String = "";
 
 	public static var kadeEngineVer:String = "1.5.4" + nightly;
 	public static var gameVer:String = "0.2.8";
 
-  var buttonsBG:FlxSprite;
-  var bgUP:FlxSprite;
-  var bgDOWN:FlxSprite;
+        var buttonsBG:FlxSprite;
+        var bgUP:FlxSprite;
+        var bgDOWN:FlxSprite;
 	var camFollow:FlxObject;
 	public static var finishedFunnyMove:Bool = false;
 	var debugKeys:Array<FlxKey>;
@@ -307,8 +307,8 @@ class MainMenuState extends MusicBeatState
 										MusicBeatState.switchState(new SoundTestMenu());									
 									case 'options':
 										MusicBeatState.switchState(new OptionsState());
-                           /*case 'extra':
-										MusicBeatState.switchState(new ExtraState());*/
+                                                                        case 'extras':
+										MusicBeatState.switchState(new ExtraState());
 								}
 							});
 						}
