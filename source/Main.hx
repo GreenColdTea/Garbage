@@ -139,10 +139,10 @@ class Main extends Sprite
 		
 		SUtil.doTheCheck();
 
-      Lib.current.stage.align = "tl";
+                Lib.current.stage.align = "tl";
 		Lib.current.stage.scaleMode = StageScaleMode.NO_SCALE;
 
-	   #if CRASH_HANDLER
+	        #if CRASH_HANDLER
 		Lib.current.loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, onCrash);
 		#end
 
@@ -169,7 +169,7 @@ class Main extends Sprite
 		#end
 	}
 
-   #if CRASH_HANDLER
+        #if CRASH_HANDLER
 	function onCrash(e:UncaughtErrorEvent):Void
 	{
 		var errMsg:String = "";
