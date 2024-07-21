@@ -15,7 +15,7 @@ import flixel.util.FlxColor;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import lime.utils.Assets;
-
+import flixel.system.FlxSound;
 
 #if windows
 import Discord.DiscordClient;
