@@ -145,12 +145,6 @@ class Main extends Sprite
 		Lib.current.loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, onCrash);
 		#end
 
-		#if !debug
-		#if VIDEO_ALLOWED
-		initialState = Intro;
-		#end
-		#end
-
 		//
 		ClientPrefs.loadDefaultKeys();
 		// FlxGraphic.defaultPersist = true;
