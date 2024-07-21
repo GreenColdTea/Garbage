@@ -41,12 +41,10 @@ class Main extends Sprite
 		skipSplash: true, // if the default flixel splash screen should be skipped
 		startFullscreen: true // if the game should start at fullscreen mode
 	};
-
 	public static var fpsVar:FPS;
 
 	// You can pretty much ignore everything from here on - your code should go in your states.
-	public static var path:String = System.applicationStorageDirectory;
-
+	
    static final losvideos:Array<String> = [
 		"bothCreditsAndIntro",
 		"explosion",
