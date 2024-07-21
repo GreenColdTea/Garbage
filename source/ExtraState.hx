@@ -73,7 +73,7 @@ class ExtraState extends MusicMenuState {
   var meltingOld:FlxSprite;
   var drippyShine:FlxSprite;
   var terror:FlxSprite;
-  var toofestOld;FlxSprite;
+  var toofestOld:FlxSprite;
   var nostalgicDuo:FlxSprite
   var unresponsive:FlxSprite;
   //next page 13-24
@@ -100,7 +100,7 @@ class ExtraState extends MusicMenuState {
   var meltingOldSel:FlxSprite;
   var drippyShineSel:FlxSprite;
   var terrorSel:FlxSprite;
-  var toofestOldSel;FlxSprite;
+  var toofestOldSel:FlxSprite;
   var nostalgicDuoSel:FlxSprite
   var unresponsiveSel:FlxSprite;
   //next page selected 13-24
