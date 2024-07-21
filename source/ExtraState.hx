@@ -22,7 +22,7 @@ class ExtraState extends MusicMenuState {
   var extraMenu:FlxSprite;
   var DebugChoice:FlxSprite;
   var SkinsChoice:FlxSprite;
-  var songsChoice:FlxSprite
+  var songsChoice:FlxSprite;
   
   //Extra menu selected
   var DebugChoiceSelec:FlxSprite;
