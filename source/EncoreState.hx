@@ -52,7 +52,7 @@ class EncoreState extends MusicBeatState // REWRITE FREEPLAY!?!?!? HELL YEA!!!!!
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
 
-               	FlxG.sound.playMusic(Paths.music('encoremenu'));
+               	FlxG.sound.playMusic(Paths.music('encoremode'));
 		
 		whiteshit = new FlxSprite().makeGraphic(1280, 720, FlxColor.WHITE);
 		whiteshit.alpha = 0;
