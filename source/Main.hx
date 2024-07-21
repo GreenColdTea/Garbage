@@ -70,13 +70,13 @@ class Main extends Sprite
 	]; //better way to do this?
 	
 	static final videosdead:Array<String> = [
-		"Atomic",
-		"BfFuckingDies",
-		"Car",
-		"FastBear",
-		"g00seb4rn6",
-		"JoeManReference",
-		"Kys"
+		"1",
+		"2",
+		"3",
+		"4",
+		"5",
+		"6",
+		"7"
 	]; //someone kill me
 
    static final seriousdead:Array<String> = [
