@@ -4318,7 +4318,7 @@ public function moveCamera(isDad:Bool)
 				trace('WENT BACK TO FREEPLAY??');
 				WeekData.loadTheFirstEnabledMod();
 				cancelMusicFadeTween();
-            PlayStateChangeables.nocheese = true;
+                                PlayStateChangeables.nocheese = true;
 				switch (curSong)
 				{
 					default:
@@ -4338,26 +4338,16 @@ public function moveCamera(isDad:Bool)
 							FlxG.switchState(new FreeplayState());
 						}
 					case 'too-slow':
-						var video:MP4Handler = new MP4Handler();
-						video.playVideo(Paths.video('tooslowcutscene2'));
-						video.finishCallback = function()
-						{
-							LoadingState.loadAndSwitchState(new MainMenuState());
-						}
+						LoadingState.loadAndSwitchState(new StoryMenuState());
 					case 'you-cant-run':
-						var video:MP4Handler = new MP4Handler();
-						video.playVideo(Paths.video('youcantruncutscene2'));
-						video.finishCallback = function()
-						{
-							LoadingState.loadAndSwitchState(new MainMenuState());
-						}
+						LoadingState.loadAndSwitchState(new StoryMenuState());
 					case 'triple-trouble':
-						var video:MP4Handler = new MP4Handler();
-						video.playVideo(Paths.video('soundtestcodes'));
-						video.finishCallback = function()
-						{
-							LoadingState.loadAndSwitchState(new MainMenuState());
-						}
+						LoadingState.loadAndSwitchState(new StoryMenuState());
+					case 'final-escape':
+						LoadingState.loadAndSwitchState(new StoryMenuState());
+					case 'face-off':
+						LoadingState.loadAndSwitchState(new StoryMenuState());
+				        }
 				}
 				if(FlxTransitionableState.skipNextTransIn) {
 					CustomFadeTransition.nextCamera = null;
