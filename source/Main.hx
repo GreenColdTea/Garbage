@@ -147,7 +147,7 @@ class Main extends Sprite
 	
 		ClientPrefs.loadDefaultKeys();
 		
-		FlxG.game = new FlxGame(game.width, game.height, game.initialState, game.zoom, game.framerate, game.skipSplash, game.startFullscreen);
+		addChild(new FlxGame(game.width, game.height, game.initialState, game.zoom, game.framerate, game.skipSplash, game.startFullscreen));
 
 		fpsVar = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsVar);
