@@ -697,8 +697,8 @@ class SoundTestMenu extends MusicBeatState
 				});
 				new FlxTimer().start(2.1, function(tmr:FlxTimer)
 				{
-                	video.playVideo(Paths.video('EXE Milk'));
-					    incameo = true;
+                             	  video.playVideo(Paths.video('EXE Milk'));
+				  incameo = true;
 				});
 			}
       else if (first == 19 && second == 83) 
@@ -824,7 +824,7 @@ class SoundTestMenu extends MusicBeatState
 					    incameo = true;
 				});
 			}
-      else if (first == 26 && second == 17) 
+      else if (first == 20 && second == 20) 
 			{
 				var video:MP4Handler = new MP4Handler();
 				woahmanstopspammin = false;
