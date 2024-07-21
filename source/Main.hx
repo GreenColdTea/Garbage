@@ -99,6 +99,12 @@ class Main extends Sprite
 
 	public function new()
 	{
+           FlxG.save.bind("MyGameSave");
+           if (FlxG.save.data.exeInfoShown == null) {
+               FlxG.save.data.exeInfoShown = false;
+               FlxG.save.flush();
+	   } 
+		
 		super();
 
     SUtil.gameCrashCheck();
