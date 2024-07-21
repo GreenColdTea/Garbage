@@ -29,7 +29,7 @@ class EncoreState extends MusicBeatState // REWRITE FREEPLAY!?!?!? HELL YEA!!!!!
 
 	var curSelected:Int = 0;
 
-	var songArray:Array<String> = ["too-slow-encore", "you-cant-run-encore", "triple-trouble-encore"];
+	var songArray:Array<String> = ["too-slow-encore", "you-cant-run-encore", "triple-trouble-encore", 'endless-encore', '];
 
 	var boxgrp:FlxTypedSpriteGroup<FlxSprite>;
 
