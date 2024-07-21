@@ -75,7 +75,7 @@ class ExtraState extends MusicMenuState {
   var drippyShine:FlxSprite;
   var terror:FlxSprite;
   var toofestOld:FlxSprite;
-  var nostalgicDuo:FlxSprite
+  var nostalgicDuo:FlxSprite;
   var unresponsive:FlxSprite;
   //next page 13-24
   var preyV1:FlxSprite;
