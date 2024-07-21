@@ -13,6 +13,7 @@ import openfl.events.Event;
 import openfl.display.StageScaleMode;
 import lime.app.Application;
 import flixel.util.FlxSave;
+import lime.system.System;
 
 #if desktop
 import Discord.DiscordClient;
@@ -23,7 +24,6 @@ import Discord.DiscordClient;
 import openfl.events.UncaughtErrorEvent;
 import haxe.CallStack;
 import haxe.io.Path;
-import sys.FileSystem;
 import sys.io.File;
 import sys.io.Process;
 #end
