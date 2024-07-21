@@ -19,7 +19,6 @@ import flixel.util.FlxSave;
 import openfl.events.UncaughtErrorEvent;
 import haxe.CallStack;
 import haxe.io.Path;
-import sys.FileSystem;
 import sys.io.File;
 import sys.io.Process;
 #end
@@ -30,7 +29,7 @@ class Main extends Sprite
 {
 	var gameWidth:Int = 1280; // Width of the game in pixels (might be less / more in actual pixels depending on your zoom).
 	var gameHeight:Int = 720; // Height of the game in pixels (might be less / more in actual pixels depending on your zoom).
-	public static var initialState:Class<FlxState> = Intro; // The FlxState the game starts with.
+	public static var initialState:Class<FlxState> = TitleState; // The FlxState the game starts with.
 	var zoom:Float = -1; // If -1, zoom is automatically calculated to fit the window dimensions.
 	var framerate:Int = 60; // How many frames per second the game should run at.
 	var skipSplash:Bool = true; // Whether to skip the flixel splash screen that appears in release mode.
@@ -147,7 +146,9 @@ class Main extends Sprite
 		#end
 
 		#if !debug
+		#if VIDEO_ALLOWED
 		initialState = Intro;
+		#end
 		#end
 
 		//
