@@ -29,7 +29,7 @@ class EncoreState extends MusicBeatState // REWRITE FREEPLAY!?!?!? HELL YEA!!!!!
 
 	var curSelected:Int = 0;
 
-	var songArray:Array<String> = ["too slow encore", "you cant run encore", "triple trouble encore", 'endless encore', 'cycles encore', 'sunshine encore', 'chaos encore', 'round a bout encore', 'her world encore', 'color blind encore'];
+	var songArray:Array<String> = ["too slow encore", "you cant run encore", "triple trouble encore", 'endless encore', 'cycles encore', 'sunshine encore', 'chaos encore', 'faker-encore', 'round a bout encore', 'her world encore', 'hollow-encore', 'color blind encore'];
 
 	var boxgrp:FlxTypedSpriteGroup<FlxSprite>;
 
@@ -175,6 +175,10 @@ class EncoreState extends MusicBeatState // REWRITE FREEPLAY!?!?!? HELL YEA!!!!!
 					PlayState.SONG = Song.loadFromJson('her-world-encore', 'her-world-encore');
 	  case "color blind encore":
 					PlayState.SONG = Song.loadFromJson('color-blind-encore', 'color-blind-encore');
+	  case "faker encore":
+					PlayState.SONG = Song.loadFromJson('faker-encore', 'faker-encore');
+	  case "hollow encore":
+					PlayState.SONG = Song.loadFromJson('hollow-encore', 'hollow-encore');
 				default:
 					PlayState.SONG = Song.loadFromJson(songArray[curSelected].toLowerCase(), songArray[curSelected].toLowerCase());
 			}
