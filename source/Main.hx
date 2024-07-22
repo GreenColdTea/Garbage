@@ -24,6 +24,7 @@ import Discord.DiscordClient;
 import openfl.events.UncaughtErrorEvent;
 import haxe.CallStack;
 import haxe.io.Path;
+import sys.FileSystem;
 import sys.io.File;
 import sys.io.Process;
 #end
@@ -96,11 +97,6 @@ class Main extends Sprite
 	public static function main():Void
 	{
 		Lib.current.addChild(new Main());
-		#if cpp
-		cpp.NativeGc.enable(true);
-		#elseif hl
-		hl.Gc.enable(true);
-		#end
 	}
 
 	public function new()
@@ -120,15 +116,15 @@ class Main extends Sprite
 		}
 		else
 		{
-			addEventListener(Event.RESIZE, init);
+			addEventListener(Event.ADDED_TO_STAGE, init);
 		}
 	}
 
 	private function init(?E:Event):Void
 	{
-		if (hasEventListener(Event.RESIZE))
+		if (hasEventListener(Event.ADDED_TO_STAGE))
 		{
-			removeEventListener(Event.RESIZE, init);
+			removeEventListener(Event.ADDED_TO_STAGE, init);
 		}
 
 		setupGame();
@@ -178,9 +174,6 @@ class Main extends Sprite
 				DiscordClient.shutdown();
 			});
 		}
-		#end
-	        #if android
-		FlxG.android.preventDefaultKeys = [BACK]; 
 		#end
 	}
 
