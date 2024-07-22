@@ -14,7 +14,6 @@ import flixel.util.FlxGradient;
 import flixel.FlxState;
 import flixel.FlxCamera;
 import flixel.FlxBasic;
-import flixel.input.mouse.FlxMouse
 
 #if android
 import flixel.input.actions.FlxActionInput;
