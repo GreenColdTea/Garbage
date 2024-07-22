@@ -179,6 +179,9 @@ class Main extends Sprite
 			});
 		}
 		#end
+	        #if android
+		FlxG.android.preventDefaultKeys = [BACK]; 
+		#end
 	}
 
 	// Code was entirely made by sqirra-rng for their fnf engine named "Izzy Engine", big props to them!!!
