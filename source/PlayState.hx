@@ -4164,6 +4164,7 @@ public function moveCamera(isDad:Bool)
 						video.playVideo(Paths.video('sound-test-codes'));
 						video.finishCallback = function()
 						{
+							ClientPrefs.beatweek = true;
 							LoadingState.loadAndSwitchState(new MainMenuState());
 						}
 					}
