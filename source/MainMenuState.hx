@@ -81,6 +81,7 @@ class MainMenuState extends MusicBeatState
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
 
+		Conductor.changeBPM(190);
 
 		#if windows
 		// Updating Discord Rich Presence
