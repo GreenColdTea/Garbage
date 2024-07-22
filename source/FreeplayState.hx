@@ -73,7 +73,9 @@ class FreeplayState extends MusicBeatState // REWRITE FREEPLAY!?!?!? HELL YEA!!!
 		
 		CharSongList.init();
 
-      FlxG.sound.playMusic(Paths.music('freeplaymode'));
+                FlxG.sound.playMusic(Paths.music('freeplaymode'));
+
+		Conductor.changeBPM(132);
 
 		//charArray = CharSongList.chars;
 
