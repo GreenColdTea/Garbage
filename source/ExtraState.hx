@@ -129,6 +129,8 @@ class ExtraState extends MusicBeatState {
 		
     FlxG.sound.playMusic(Paths.music('extras'));
 
+    Conductor.changeBPM(104);
+
     if (getout) {
       #if android
         addVirtualPad(NONE, B);
