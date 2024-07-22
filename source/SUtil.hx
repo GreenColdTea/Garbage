@@ -40,6 +40,23 @@ class SUtil
 		#end
 	}
 
+	#if sys
+	public static function getStorageDirectory(?force:Bool = false):String
+	{
+		var daPath:String = '';
+		#if android
+		if (!FileSystem.exists(LimeSystem.applicationStorageDirectory + 'storagetype.txt'))
+			File.saveContent(LimeSystem.applicationStorageDirectory + 'storagetype.txt', ClientPrefs.storageType);
+		var curStorageType:String = File.getContent(LimeSystem.applicationStorageDirectory + 'storagetype.txt');
+		daPath = force ? StorageType.fromStrForce(curStorageType) : StorageType.fromStr(curStorageType);
+		daPath = haxe.io.Path.addTrailingSlash(daPath);
+		#elseif ios
+		daPath = LimeSystem.documentsDirectory;
+		#end
+
+		return daPath;
+	}
+
 	public static function doTheCheck()
 	{
 		#if android
