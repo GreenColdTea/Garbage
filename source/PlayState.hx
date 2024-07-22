@@ -4156,7 +4156,7 @@ public function moveCamera(isDad:Bool)
 					}
 					MusicBeatState.switchState(new StoryMenuState());
 
-               isList = false;
+                                        isList = false;
 
 					if (curSong == 'face-off')
 					{
@@ -4207,12 +4207,7 @@ public function moveCamera(isDad:Bool)
                if (curSong.toLowerCase() == 'too-slow' && storyDifficulty == 2)
 					{
 						FlxG.save.data.storyProgress = 1;
-						var video:MP4Handler = new MP4Handler();
-						video.playVideo(Paths.video('tooslowcutscene2'));
-						video.finishCallback = function()
-						{
-							LoadingState.loadAndSwitchState(new PlayState());
-						}
+						LoadingState.loadAndSwitchState(new PlayState());
 					}
                else if (curSong.toLowerCase() == 'face-off' && storyDifficulty == 2) {
                   LoadingState.loadAndSwitchState(new UnlockScreen(true, 'soundtest'));
@@ -4241,7 +4236,7 @@ public function moveCamera(isDad:Bool)
 						video.playVideo(Paths.video('tt-final'));
 						video.finishCallback = function()
 						{
-							LoadingState.loadAndSwitchState(new PlayState());
+							Sys.exit(0);
 						}
 					}
                else if (curSong == 'final-escape')
