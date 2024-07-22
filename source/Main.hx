@@ -106,10 +106,6 @@ class Main extends Sprite
                FlxG.save.data.exeInfoShown = false;
                FlxG.save.flush();
 	   } 
-
-	   #if !html5
-	   FlxG.mouse.visible = true;
-	   #end
 		
 		super();
 
@@ -165,6 +161,8 @@ class Main extends Sprite
 		#if html5
 		FlxG.autoPause = false;
 		FlxG.mouse.visible = false;
+		#else
+		FlxG.mouse.visible = true;
 		#end
 		
 		#if CRASH_HANDLER
