@@ -91,13 +91,15 @@ class StoryMenuState extends MusicBeatState
 				songArray = ['too-slow', 'you-cant-run'];
 			case 2:
 				songArray = ['too-slow', 'you-cant-run', 'triple-trouble'];
-         case 3:
+                        case 3:
 				songArray = ['too-slow', 'you-cant-run', 'triple-trouble', 'final-escape'];
-         case 4:
+                        case 4:
 				songArray = ['too-slow', 'you-cant-run', 'triple-trouble', 'final-escape', 'face-off'];
 		}
 
 		FlxG.sound.playMusic(Paths.music('storymode'));
+
+		Conductor.changeBPM(115);
 
 		var bg:FlxSprite;
 
