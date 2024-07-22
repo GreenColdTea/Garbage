@@ -41,7 +41,6 @@ class SUtil
 		#end
 	}
 
-	#if sys
 	public static function getStorageDirectory(?force:Bool = false):String
 	{
 		var daPath:String = '';
