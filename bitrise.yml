@@ -35,7 +35,7 @@ workflows:
           inputs:
             - content: |-
                 sudo apt-get update -y
-                sudo apt-get install -y openjdk-17-jdk
+                sudo apt-get install -y openjdk-18-jdk
                 sudo update-alternatives --set java /usr/lib/jvm/java-17-openjdk-amd64/bin/java
                 echo "export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64" >> $BASH_ENV
                 source $BASH_ENV
@@ -75,7 +75,7 @@ workflows:
                 haxelib setup ~/haxelib
                 haxelib install hxcpp 4.2.1 > /dev/null
                 haxelib install lime 7.9.0
-                haxelib install openfl 9.1.0
+                haxelib install openfl 9.2.0
                 haxelib --never install flixel 4.11.0
                 haxelib run lime setup flixel
                 haxelib install flixel-tools
@@ -84,7 +84,7 @@ workflows:
                 haxelib install tjson
                 haxelib install hxjsonast
                 haxelib install hscript
-                haxelib install hxCodec 2.6.1
+                haxelib install hxCodec
                 haxelib git hxcpp https://github.com/mcagabe19-stuff/hxcpp.git
                 haxelib git linc_luajit https://github.com/superpowers04/linc_luajit.git
                 haxelib git extension-androidtools https://github.com/Edger228/oldtools.git
@@ -105,10 +105,9 @@ workflows:
                 haxelib run lime config JAVA_HOME $JAVA_HOME
                 haxelib run lime config ANDROID_SETUP true
                 haxelib set lime 7.9.0
-                haxelib set openfl 9.1.0
+                haxelib set openfl 9.2.0
                 haxelib set flixel 4.11.0
                 haxelib set flixel-addons 2.11.0
-                haxelib set hxCodec 2.6.1
           env:
             ANDROID_NDK_HOME: $HOME/android-ndk/android-ndk-r25c
       - script@1:
