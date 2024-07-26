@@ -75,7 +75,7 @@ workflows:
                 haxelib setup ~/haxelib
                 haxelib install hxcpp 4.2.1 > /dev/null
                 haxelib install lime 7.9.0
-                haxelib install openfl 9.1.0
+                haxelib install openfl 9.2.0
                 haxelib --never install flixel 4.11.0
                 haxelib run lime setup flixel
                 haxelib install flixel-tools
@@ -86,7 +86,6 @@ workflows:
                 haxelib install hxjsonast
                 haxelib install hscript
                 haxelib install hxCodec 2.6.1
-                haxelib git hxcpp https://github.com/mcagabe19-stuff/hxcpp.git
                 haxelib git linc_luajit https://github.com/superpowers04/linc_luajit.git
                 haxelib git extension-androidtools https://github.com/Edger228/androidtools.git
                 haxelib install hxcpp-debug-server
@@ -108,6 +107,7 @@ workflows:
                 haxelib set lime 7.9.0
                 haxelib set openfl 9.1.0
                 haxelib set flixel 4.11.0
+                haxelib set hxcpp 4.2.1
                 haxelib set flixel-addons 2.11.0
                 haxelib set hxCodec 2.6.1
           env:
