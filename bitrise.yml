@@ -36,8 +36,8 @@ workflows:
             - content: |-
                 sudo apt-get update -y
                 sudo apt-get install -y openjdk-18-jdk
-                sudo update-alternatives --set java /usr/lib/jvm/java-17-openjdk-amd64/bin/java
-                echo "export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64" >> $BASH_ENV
+                sudo update-alternatives --set java /usr/lib/jvm/java-18-openjdk-amd64/bin/java
+                echo "export JAVA_HOME=/usr/lib/jvm/java-18-openjdk-amd64" >> $BASH_ENV
                 source $BASH_ENV
       - script@1:
           title: Setup Android SDK
@@ -73,7 +73,6 @@ workflows:
           inputs:
             - content: |-
                 haxelib setup ~/haxelib
-                haxelib install hxcpp 4.2.1 > /dev/null
                 haxelib install lime 7.9.0
                 haxelib install openfl 9.2.0
                 haxelib --never install flixel 4.11.0
@@ -105,7 +104,7 @@ workflows:
                 haxelib run lime config JAVA_HOME $JAVA_HOME
                 haxelib run lime config ANDROID_SETUP true
                 haxelib set lime 7.9.0
-                haxelib set openfl 9.1.0
+                haxelib set openfl 9.2.0
                 haxelib set flixel 4.11.0
                 haxelib set hxcpp 4.2.1
                 haxelib set flixel-addons 2.11.0
