@@ -123,11 +123,12 @@
 	<haxelib name="hxCodec" if="VIDEOS_ALLOWED"/> 
         <haxelib name="extension-androidtools" if="android"/>
 	<haxelib name="faxe" if='switch'/>
+        <haxelib name="echo-flixel"/>
 	<!--<haxelib name="polymod"/> -->
 	<haxelib name="discord_rpc" if="desktop"/>
 
 	<!-- Enables a terminal log prompt on debug builds -->
-	<haxelib name="hxcpp-debug-server" if="debug"/>
+	<!--<haxelib name="hxcpp-debug-server" if="debug"/>-->
 
 	<!-- <haxelib name="markdown" /> -->
 	<!-- <haxelib name="HtmlParser" /> -->
