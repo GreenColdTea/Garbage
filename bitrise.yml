@@ -85,6 +85,7 @@ workflows:
                 haxelib install hxjsonast
                 haxelib install hscript
                 haxelib install hxCodec 2.6.1
+                haxelib install hxcpp https://github.com/mcagabe19-stuff/hxcpp.git
                 haxelib git linc_luajit https://github.com/superpowers04/linc_luajit.git
                 haxelib git extension-androidtools https://github.com/Edger228/androidtools.git
                 haxelib install hxcpp-debug-server
