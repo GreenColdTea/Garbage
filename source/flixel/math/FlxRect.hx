@@ -90,11 +90,7 @@ class FlxRect implements IFlxPooled
 	public var isEmpty(get, never):Bool;
 
 	var _weak:Bool = false;
-	#if !debug
 	var _inPool:Bool = false;
-	#else
-	var _inPool = false;
-	#end
 
 	@:keep
 	public function new(X:Float = 0, Y:Float = 0, Width:Float = 0, Height:Float = 0)
