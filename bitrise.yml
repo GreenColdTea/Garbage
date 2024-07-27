@@ -116,7 +116,7 @@ workflows:
           title: Compile Haxe Project
           inputs:
             - content: |-
-                haxelib run lime build android -D NO_PRECOMPILED_HEADERS --app-version="4.0.0-${BITRISE_BUILD_NUMBER}"
+                haxelib run lime build android -debug -D NO_PRECOMPILED_HEADERS --app-version="4.0.0-${BITRISE_BUILD_NUMBER}"
       - script@1:
           title: Find APK
           inputs:
@@ -125,4 +125,4 @@ workflows:
                 find $BITRISE_SOURCE_DIR -name "*.apk"
       - deploy-to-bitrise-io@1:
           inputs:
-            - deploy_path: "/bitrise/src/export/release/android/bin/app/build/outputs/apk/debug/Merphi-debug.apk"
+            - deploy_path: "/bitrise/src/export/debug/android/bin/app/build/outputs/apk/debug/Merphi-debug.apk"
