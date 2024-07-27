@@ -41,6 +41,7 @@ class FlxRect implements IFlxPooled
 		
 	public static function get(X:Float = 0, Y:Float = 0, Width:Float = 0, Height:Float = 0):FlxRect
 	{
+		var _inPool:Bool;
 		var rect = _pool.get().set(X, Y, Width, Height);
 		rect._inPool = false;
 		return rect;
