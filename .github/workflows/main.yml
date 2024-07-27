@@ -51,6 +51,7 @@ jobs:
           haxelib install hxcpp 4.2.1 > /dev/null
           haxelib install openfl 9.2.0
           haxelib --never install flixel 4.11.0
+          haxelib git lime https://github.com/MobilePorting/lime-0.6.3.git
           haxelib run lime setup flixel
           haxelib install flixel-tools
           haxelib install flixel-ui 2.4.0
@@ -59,7 +60,6 @@ jobs:
           haxelib install hxjsonast
           haxelib install hscript 2.4.0
           haxelib install hxCodec 2.6.1
-          hacelib git lime https://github.com/MobilePorting/lime-0.6.3.git
           haxelib git linc_luajit https://github.com/superpowers04/linc_luajit.git
           haxelib git extension-androidtools https://github.com/Edger228/androidtools.git
           haxelib install hxcpp-debug-server
