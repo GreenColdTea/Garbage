@@ -246,7 +246,7 @@ class PauseSubState extends MusicBeatSubstate
 			}
 
 		#if debug
-		if (FlxG.keys.justPressed.BACK #if android || controls.BACK #end)
+		if (FlxG.keys.justPressed.G #if android || controls.BACK #end)
 		{
 			switch (FlxG.random.int(1,7))
 			{
