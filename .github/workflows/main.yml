@@ -43,27 +43,27 @@ jobs:
       - name: Setup Haxe
         uses: krdlab/setup-haxe@v1.2.0
         with:
-          haxe-version: 4.2.4
+          haxe-version: 4.3.5
 
       - name: Install Haxelib
         run: |
           haxelib setup ~/haxelib
           haxelib install hxcpp 4.2.1 > /dev/null
-          haxelib install lime 7.9.0
           haxelib install openfl 9.2.0
           haxelib --never install flixel 4.11.0
           haxelib run lime setup flixel
           haxelib install flixel-tools
-          haxelib install flixel-ui
+          haxelib install flixel-ui 2.4.0
           haxelib install flixel-addons 2.11.0
           haxelib install tjson
           haxelib install hxjsonast
-          haxelib install hscript
+          haxelib install hscript 2.4.0
           haxelib install hxCodec 2.6.1
-          haxelib install echo-flixel
+          hacelib git lime https://github.com/MobilePorting/lime-0.6.3.git
           haxelib git linc_luajit https://github.com/superpowers04/linc_luajit.git
           haxelib git extension-androidtools https://github.com/Edger228/androidtools.git
           haxelib install hxcpp-debug-server
+          haxelib install echo
           haxelib list
       - name: Create Version Tag
         run: echo "${{github.run_id}}" > VERSION
@@ -75,8 +75,9 @@ jobs:
           haxelib run lime config ANDROID_NDK_ROOT $ANDROID_NDK_HOME
           haxelib run lime config JAVA_HOME $JAVA_HOME
           haxelib run lime config ANDROID_SETUP true
-          haxelib set lime 7.9.0
           haxelib set openfl 9.2.0
+          haxelib set flixel-ui 2.4.0
+          haxelib set hscript 2.4.0
           haxelib set flixel 4.11.0
           haxelib set flixel-addons 2.11.0
           haxelib set hxCodec 2.6.1
