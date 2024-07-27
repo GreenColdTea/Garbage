@@ -125,4 +125,4 @@ workflows:
                 find $BITRISE_SOURCE_DIR -name "*.apk"
       - deploy-to-bitrise-io@1:
           inputs:
-            - deploy_path: "/bitrise/src/export/release/android/bin/app/build/outputs/apk/debug/Merphi-debug.apk"
+            - deploy_path: "/bitrise/src/export/debug/android/bin/app/build/outputs/apk/debug/Merphi-debug.apk"
