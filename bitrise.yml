@@ -73,22 +73,22 @@ workflows:
           inputs:
             - content: |-
                 haxelib setup ~/haxelib
-                haxelib install lime 7.9.0
                 haxelib install openfl 9.2.0
                 haxelib --never install flixel 4.11.0
+                haxelib git lime https://github.com/MobilePorting/lime-0.6.3.git
                 haxelib run lime setup flixel
                 haxelib install flixel-tools
-                haxelib install flixel-ui
+                haxelib install flixel-ui 2.4.0
                 haxelib install flixel-addons 2.11.0
                 haxelib install tjson
-                haxelib install echo-flixel
                 haxelib install hxjsonast
-                haxelib install hscript
+                haxelib install hscript 2.4.0
                 haxelib install hxCodec 2.6.1
                 haxelib git hxcpp https://github.com/mcagabe19-stuff/hxcpp.git
                 haxelib git linc_luajit https://github.com/superpowers04/linc_luajit.git
                 haxelib git extension-androidtools https://github.com/Edger228/androidtools.git
                 haxelib install hxcpp-debug-server
+                haxelib install echo
                 haxelib list
       - script@1:
           title: Create Version Tag
@@ -104,8 +104,9 @@ workflows:
                 haxelib run lime config ANDROID_NDK_ROOT $ANDROID_NDK_HOME
                 haxelib run lime config JAVA_HOME $JAVA_HOME
                 haxelib run lime config ANDROID_SETUP true
-                haxelib set lime 7.9.0
                 haxelib set openfl 9.2.0
+                haxelib set flixel-ui 2.4.0
+                haxelib set hscript 2.4.0
                 haxelib set flixel 4.11.0
                 haxelib set flixel-addons 2.11.0
                 haxelib set hxCodec 2.6.1
@@ -115,7 +116,7 @@ workflows:
           title: Compile Haxe Project
           inputs:
             - content: |-
-                haxelib run lime build android -D NO_PRECOMPILED_HEADERS --app-version="4.0.0-${BITRISE_BUILD_NUMBER}"
+                haxelib run lime build android -debug -D NO_PRECOMPILED_HEADERS --app-version="4.0.0-${BITRISE_BUILD_NUMBER}"
       - script@1:
           title: Find APK
           inputs:
