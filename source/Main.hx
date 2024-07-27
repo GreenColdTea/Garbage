@@ -36,7 +36,7 @@ class Main extends Sprite
 	var game = {
 		width: 1280, // WINDOW width
 		height: 720, // WINDOW height
-		initialState: TitleState, // initial game state
+		initialState: Intro, // initial game state
 		zoom: -1.0, // game state bounds
 		framerate: 60, // default framerate
 		skipSplash: true, // if the default flixel splash screen should be skipped
@@ -52,7 +52,7 @@ class Main extends Sprite
 		"glasses",
 		"guns",
 		"HaxeFlixelIntro",
-      "sonicexe-intro",
+                "sonicexe-intro",
 		"hitmarkers",
 		"illuminati",
 		"IlluminatiConfirmed",
@@ -109,7 +109,8 @@ class Main extends Sprite
 		
 		super();
 
-    SUtil.gameCrashCheck();
+                SUtil.gameCrashCheck();
+		
 		if (stage != null)
 		{
 			init();
