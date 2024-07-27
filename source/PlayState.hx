@@ -485,10 +485,12 @@ class PlayState extends MusicBeatState {
 
 	override public function create()
 	{
-    Paths.clearStoredMemory();
-    current=this;
+          Paths.clearStoredMemory();
+	  Paths.clearUnusedMemory();
+		
+          current=this;
 
-    sonicHUD = new FlxSpriteGroup();
+          sonicHUD = new FlxSpriteGroup();
 	  Conductor.mapBPMChanges(SONG);
 		Conductor.changeBPM(SONG.bpm);
 		
