@@ -38,10 +38,10 @@ class FlxRect implements IFlxPooled
 	}
 	
 	#else
-		
-	public static function get(X:Float = 0, Y:Float = 0, Width:Float = 0, Height:Float = 0):FlxRect
+
+	public var _inPool:Bool;
+	public static inline function get(X:Float = 0, Y:Float = 0, Width:Float = 0, Height:Float = 0):FlxRect
 	{
-		var _inPool:Bool;
 		var rect = _pool.get().set(X, Y, Width, Height);
 		rect._inPool = false;
 		return rect;
@@ -51,7 +51,7 @@ class FlxRect implements IFlxPooled
 	 * Recycle or create a new FlxRect which will automatically be released
 	 * to the pool when passed into a flixel function.
 	 */
-	public static function weak(X:Float = 0, Y:Float = 0, Width:Float = 0, Height:Float = 0):FlxRect
+	public static inline function weak(X:Float = 0, Y:Float = 0, Width:Float = 0, Height:Float = 0):FlxRect
 	{
 		var rect = get(X, Y, Width, Height);
 		rect._weak = true;
