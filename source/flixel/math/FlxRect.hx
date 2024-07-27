@@ -93,7 +93,7 @@ class FlxRect implements IFlxPooled
 	#if !debug
 	var _inPool:Bool = false;
 	#else
-	_inPool = false;
+	var _inPool = false;
 	#end
 
 	@:keep
