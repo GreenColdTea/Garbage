@@ -30,6 +30,10 @@ import flixel.util.FlxTimer;
 import lime.app.Application;
 import openfl.Assets;
 import flixel.util.FlxSave;
+#if MODS_ALLOWED
+import sys.FileSystem;
+import sys.io.File;
+#end
 
 using StringTools;
 
