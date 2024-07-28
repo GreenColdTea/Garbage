@@ -81,6 +81,10 @@ class MainMenuState extends MusicBeatState
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
 
+		#if MODS_ALLOWED
+		Paths.pushGlobalMods();
+		#end
+
 		Conductor.changeBPM(190);
 
 		#if windows
