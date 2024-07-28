@@ -156,11 +156,11 @@ class TitleState extends MusicBeatState
 		#elseif CHARTING
 		FlxTransitionableState.skipNextTransOut=true;
 		FlxTransitionableState.skipNextTransIn=true;
-		MusicBeatState.switchState(new ChartingState());
+		MusicBeatState.switchState(new editors.ChartingState());
 		#elseif MENU
 		FlxTransitionableState.skipNextTransOut=true;
 		FlxTransitionableState.skipNextTransIn=true;
-		MusicBeatState.switchState(new EncoreState());
+		MusicBeatState.switchState(new MainMenuState());
 		#else
 
 			#if desktop
@@ -179,9 +179,9 @@ class TitleState extends MusicBeatState
 
 	var logoBl:FlxSprite;
 	var logoBlBUMP:FlxSprite;
-   var logoBlBUMP2:FlxSprite;
-   var logoBlBUMP3:FlxSprite;
-   var spikesTitle:FlxSprite;
+        var logoBlBUMP2:FlxSprite;
+        var logoBlBUMP3:FlxSprite;
+        var spikesTitle:FlxSprite;
 //	var gfDance:FlxSprite;
 //	var danceLeft:Bool = false;
 	var titleText:FlxSprite;
@@ -235,7 +235,7 @@ class TitleState extends MusicBeatState
 
 		add(logoBlBUMP);
 
-      logoBlBUMP2 = new FlxSprite(0, 0);
+                logoBlBUMP2 = new FlxSprite(0, 0);
 		logoBlBUMP2.loadGraphic(Paths.image('Restoration-2', 'exe'));
 		logoBlBUMP2.antialiasing = true;
 
@@ -246,7 +246,7 @@ class TitleState extends MusicBeatState
 
 		add(logoBlBUMP2);
 
-      logoBlBUMP3 = new FlxSprite(0, 0);
+                logoBlBUMP3 = new FlxSprite(0, 0);
 		logoBlBUMP3.loadGraphic(Paths.image('Restoration-3', 'exe'));
 		logoBlBUMP3.antialiasing = true;
 
@@ -257,7 +257,7 @@ class TitleState extends MusicBeatState
 
 		add(logoBlBUMP3);
 
-      spikesTitle = new FlxSprite(0, -100);
+                spikesTitle = new FlxSprite(0, -100);
 		spikesTitle.frames = Paths.getSparrowAtlas('title/spikes');
 		spikesTitle.animation.addByPrefix('idle', "anim", 24);
 		spikesTitle.animation.play('idle');
@@ -266,7 +266,7 @@ class TitleState extends MusicBeatState
 		spikesTitle.scale.y = 3.25;
 		spikesTitle.antialiasing = true;
 		spikesTitle.updateHitbox();
-      spikesTitle.screenCenter(X);
+                spikesTitle.screenCenter(X);
 		add(bg);
 
 	/*	gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
@@ -429,9 +429,9 @@ class TitleState extends MusicBeatState
 				new FlxTimer().start(1, function(tmr:FlxTimer)
 					{
 						FlxTween.tween(logoBlBUMP, {alpha: 0}, 1);
-                  FlxTween.tween(logoBlBUMP2, {alpha: 0}, 1);
-                  FlxTween.tween(logoBlBUMP3, {alpha: 0}, 1);
-                  FlxTween.tween(spikesTitle, {alpha: 0}, 1);
+                                                FlxTween.tween(logoBlBUMP2, {alpha: 0}, 1);
+                                                FlxTween.tween(logoBlBUMP3, {alpha: 0}, 1);
+                                                FlxTween.tween(spikesTitle, {alpha: 0}, 1);
 					});
 
 				transitioning = true;
@@ -439,13 +439,13 @@ class TitleState extends MusicBeatState
 				new FlxTimer().start(4, function(tmr:FlxTimer)
 				{
 					remove(titleText); // incase someone turned flashing off
-               if (!FlxG.save.data.exeInfoShown) {
-                  FlxG.save.data.exeInfoShown = true;
-                  FlxG.save.flush();
-                  FlxG.switchState(new EXEInfoState());
-               } else {  
-                   FlxG.switchState(new MainMenuState());
-               }
+                                        if (!FlxG.save.data.exeInfoShown) {
+                                           FlxG.save.data.exeInfoShown = true;
+                                           FlxG.save.flush();
+                                           FlxG.switchState(new EXEInfoState());
+                                        } else {  
+                                           FlxG.switchState(new MainMenuState());
+                                        }
 					/*FlxG.sound.music.stop();
 					MusicBeatState.switchState(new EXEInfoState());
 					var video = new MP4Handler();
@@ -470,7 +470,6 @@ class TitleState extends MusicBeatState
 			else if (pressedEnter && !transitioning && skippedIntro && code == 4)
 				{
 					transitioning = true;
-
 
 					PlayState.SONG = Song.loadFromJson('milk', 'milk');
 					PlayState.isStoryMode = false;
