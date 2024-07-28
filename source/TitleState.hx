@@ -68,6 +68,10 @@ class TitleState extends MusicBeatState
 		#if android
 		FlxG.android.preventDefaultKeys = [BACK];
 		#end
+
+                Paths.clearStoredMemory();
+		Paths.clearUnusedMemory();
+			
 		// flixel automatically saves your volume!
 		if(FlxG.save.data.volume != null) {
 			FlxG.sound.volume = FlxG.save.data.volume;
