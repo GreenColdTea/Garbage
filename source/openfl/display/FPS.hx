@@ -47,7 +47,7 @@ class FPS extends TextField
 		currentFPS = 0;
 		selectable = false;
 		mouseEnabled = false;
-		defaultTextFormat = new TextFormat("_sans", 14, color);
+		defaultTextFormat = new TextFormat(Assets.getFont(Paths.font("sonic-cd-menu-font.ttf")).fontName, 14, color);
 		autoSize = LEFT;
 		multiline = true;
 		text = "FPS: ";
@@ -91,7 +91,7 @@ class FPS extends TextField
 			text += "\nMemory: " + memoryMegas + " MB";
 			#end
 
-			textColor = 0xFFFFFFFF;
+			textColor = 0xFFFFFF00;
 			if (memoryMegas > 3000 || currentFPS <= ClientPrefs.framerate / 2)
 			{
 				textColor = 0xFFFF0000;
