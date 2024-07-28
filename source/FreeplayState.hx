@@ -87,6 +87,8 @@ class FreeplayState extends MusicBeatState // REWRITE FREEPLAY!?!?!? HELL YEA!!!
 		bg.setGraphicSize(1280, 720);
 		add(bg);
 
+		WeekData.loadTheFirstEnabledMod();
+
 		scrollingBg = new FlxBackdrop(Paths.image('freeplay-encore/sidebar'), 0, 1, false, true);
 		add(scrollingBg);
 
