@@ -2740,6 +2740,8 @@ class PlayState extends MusicBeatState {
 		switch(event.event) {
 			case 'Change Character':
 				var charType:Int = 0;
+				Paths.clearStoredMemory();
+	                        Paths.clearUnusedMemory();
 				switch(event.value1.toLowerCase()) {
 					case 'gf' | 'girlfriend' | '1':
 						charType = 2;
@@ -3894,6 +3896,8 @@ override function onFocusLost():Void
 
 			case 'Change Character':
 				var charType:Int = 0;
+		                Paths.clearStoredMemory();
+	                        Paths.clearUnusedMemory();
 				switch(value1.toLowerCase().trim()) {
 					case 'gf' | 'girlfriend':
 						charType = 2;
