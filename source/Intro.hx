@@ -70,7 +70,7 @@ class Intro extends MusicBeatState
          FlxG.sound.muteKeys = TitleState.muteKeys;
          FlxG.sound.volumeDownKeys = TitleState.volumeDownKeys;
          FlxG.sound.volumeUpKeys = TitleState.volumeUpKeys;    
-         MusicBeatState.switchState(new EXEInfoState());
+         MusicBeatState.switchState(new TitleState());
       }
       if (FlxG.save.data.storyProgress == 3) {
 	 video2.canSkip = false;
