@@ -2,7 +2,7 @@ package;
 
 import flixel.graphics.FlxGraphic;
 import sys.FileSystem;
-#if desktop
+#if windows
 import Discord.DiscordClient;
 import sys.thread.Thread;
 #end
@@ -55,6 +55,12 @@ class Intro extends MusicBeatState
       var video2 = new VideoHandler();
       video.canSkip = false;
       video2.canSkip = true;
+      var randomChance:Int = FlxG.random.int(0, 99);
+      if (randomChance < 3) {
+         video.playVideo(Paths.video('HaxeFlixelIntroXD'));
+      } else {
+         video.playVideo(Paths.video('HaxeFlixelIntro'));
+      }
       video.finishCallback = function()
       {
          video2.playVideo(Paths.video('sonicexe-intro'));
@@ -81,6 +87,5 @@ class Intro extends MusicBeatState
 	    PlayState.storyWeek = 0;
 	 }
        }
-	    video.playVideo(Paths.video('HaxeFlixelIntro'));
     }
 }
