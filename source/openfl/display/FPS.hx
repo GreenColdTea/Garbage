@@ -5,6 +5,7 @@ import openfl.events.Event;
 import openfl.text.TextField;
 import openfl.text.TextFormat;
 import flixel.math.FlxMath;
+import openfl.utils.Assets;
 #if gl_stats
 import openfl.display._internal.stats.Context3DStats;
 import openfl.display._internal.stats.DrawCallContext;
@@ -48,7 +49,7 @@ class FPS extends TextField
 		selectable = false;
 		mouseEnabled = false;
 
-		var textFormat = new TextFormat(openfl.utils.Assets.getFont("assets/fonts/sonic-cd-menu-font.ttf").fontName, 14, color);
+		var textFormat = new TextFormat(openfl.utils.Assets.getFont("assets/fonts/sonic-cd-menu-font.ttf").fontName, 10, color);
 		
 		defaultTextFormat = textFormat;
 		autoSize = LEFT;
