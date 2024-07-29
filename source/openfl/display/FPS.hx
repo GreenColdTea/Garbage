@@ -49,7 +49,7 @@ class FPS extends TextField
 		selectable = false;
 		mouseEnabled = false;
 
-		var textFormat = new TextFormat(openfl.utils.Assets.getFont("assets/fonts/sonic-cd-menu-font.ttf").fontName, 10, color);
+		var textFormat = new TextFormat(openfl.utils.Assets.getFont("assets/fonts/sonic-cd-menu-font.ttf").fontName, 12, color);
 		
 		defaultTextFormat = textFormat;
 		autoSize = LEFT;
