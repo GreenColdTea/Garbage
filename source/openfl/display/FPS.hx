@@ -48,10 +48,6 @@ class FPS extends TextField
 		selectable = false;
 		mouseEnabled = false;
 
-		// Загрузка шрифта
-		var font = Assets.getFont(Paths.font("sonic-cd-menu-font.ttf"));
-
-		// Использование имени шрифта для создания формата текста
 		var textFormat = new TextFormat("Sonic CD Menu Font Regular", 15, color);
 		
 		defaultTextFormat = textFormat;
