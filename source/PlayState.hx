@@ -2740,8 +2740,6 @@ class PlayState extends MusicBeatState {
 		switch(event.event) {
 			case 'Change Character':
 				var charType:Int = 0;
-				Paths.clearStoredMemory();
-	                        Paths.clearUnusedMemory();
 				switch(event.value1.toLowerCase()) {
 					case 'gf' | 'girlfriend' | '1':
 						charType = 2;
@@ -2753,7 +2751,9 @@ class PlayState extends MusicBeatState {
 				}
 
 				var newCharacter:String = event.value2;
+				if (!ClientPrefs.PotatoOptimization) {
 				addCharacterToList(newCharacter, charType);
+				}
 
 			case 'Dadbattle Spotlight':
 				dadbattleBlack = new BGSprite(null, -800, -400, 0, 0);
@@ -3896,8 +3896,6 @@ override function onFocusLost():Void
 
 			case 'Change Character':
 				var charType:Int = 0;
-		                Paths.clearStoredMemory();
-	                        Paths.clearUnusedMemory();
 				switch(value1.toLowerCase().trim()) {
 					case 'gf' | 'girlfriend':
 						charType = 2;
@@ -3911,7 +3909,7 @@ override function onFocusLost():Void
 				switch(charType) {
 					case 0:
 						if(boyfriend.curCharacter != value2) {
-							if(!boyfriendMap.exists(value2)) {
+							if(!boyfriendMap.exists(value2) || !ClientPrefs.PotatoOptimization) {
 								addCharacterToList(value2, charType);
 							}
 
@@ -3925,7 +3923,7 @@ override function onFocusLost():Void
 
 					case 1:
 						if(dad.curCharacter != value2) {
-							if(!dadMap.exists(value2)) {
+							if(!dadMap.exists(value2) || !ClientPrefs.PotatoOptimization) {
 								addCharacterToList(value2, charType);
 							}
 
@@ -3950,7 +3948,7 @@ override function onFocusLost():Void
 						{
 							if(gf.curCharacter != value2)
 							{
-								if(!gfMap.exists(value2))
+								if(!gfMap.exists(value2) || !ClientPrefs.PotatoOptimization)
 								{
 									addCharacterToList(value2, charType);
 								}
